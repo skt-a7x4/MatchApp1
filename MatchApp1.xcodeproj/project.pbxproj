@@ -19,6 +19,8 @@
 		4F9D760B28ACB53C001B3F74 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D760A28ACB53C001B3F74 /* Util.swift */; };
 		4F9D760D28ACBF22001B3F74 /* InputProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D760C28ACBF22001B3F74 /* InputProfileController.swift */; };
 		4F9D760F28ACC153001B3F74 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D760E28ACC153001B3F74 /* Manager.swift */; };
+		4F9D761128ACD0C6001B3F74 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D761028ACD0C6001B3F74 /* UserDataModel.swift */; };
+		4F9D761328ACD53F001B3F74 /* SendDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D761228ACD53F001B3F74 /* SendDBModel.swift */; };
 		B944434C55C6ECEC4E054668 /* Pods_MatchApp1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C212D2B155866C291C64F5A8 /* Pods_MatchApp1.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		4F9D760A28ACB53C001B3F74 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		4F9D760C28ACBF22001B3F74 /* InputProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputProfileController.swift; sourceTree = "<group>"; };
 		4F9D760E28ACC153001B3F74 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		4F9D761028ACD0C6001B3F74 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
+		4F9D761228ACD53F001B3F74 /* SendDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDBModel.swift; sourceTree = "<group>"; };
 		91D2D247FB6378FAA4F3374C /* Pods-MatchApp1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchApp1.debug.xcconfig"; path = "Target Support Files/Pods-MatchApp1/Pods-MatchApp1.debug.xcconfig"; sourceTree = "<group>"; };
 		A53E8BB9BA7241C46851DB2E /* Pods-MatchApp1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MatchApp1.release.xcconfig"; path = "Target Support Files/Pods-MatchApp1/Pods-MatchApp1.release.xcconfig"; sourceTree = "<group>"; };
 		C212D2B155866C291C64F5A8 /* Pods_MatchApp1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MatchApp1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				4F9D760E28ACC153001B3F74 /* Manager.swift */,
+				4F9D761028ACD0C6001B3F74 /* UserDataModel.swift */,
+				4F9D761228ACD53F001B3F74 /* SendDBModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 				4F9D75F628AC9F8F001B3F74 /* MatchApp1.xcdatamodeld in Sources */,
 				4F9D760F28ACC153001B3F74 /* Manager.swift in Sources */,
 				4F9D760828ACA3C0001B3F74 /* CreateNewUsersViewController.swift in Sources */,
+				4F9D761328ACD53F001B3F74 /* SendDBModel.swift in Sources */,
 				4F9D760D28ACBF22001B3F74 /* InputProfileController.swift in Sources */,
+				4F9D761128ACD0C6001B3F74 /* UserDataModel.swift in Sources */,
 				4F9D75EC28AC9F8F001B3F74 /* AppDelegate.swift in Sources */,
 				4F9D75EE28AC9F8F001B3F74 /* SceneDelegate.swift in Sources */,
 			);

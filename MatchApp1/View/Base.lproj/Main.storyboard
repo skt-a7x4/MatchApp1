@@ -35,9 +35,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlj-yV-g2Z">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qlj-yV-g2Z">
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="333"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UoE-y0-6Hh" appends="YES" id="n4W-QL-Oyr"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ニックネーム" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rN8-a8-HBY">
                                 <rect key="frame" x="20" y="355" width="388" height="34"/>
@@ -116,6 +120,7 @@
                     </view>
                     <connections>
                         <outlet property="doneButton" destination="fln-2d-cXe" id="fgE-0S-p9u"/>
+                        <outlet property="imageView" destination="qlj-yV-g2Z" id="uN7-9b-Gxd"/>
                         <outlet property="quickWordTextField" destination="ckS-Tq-bl4" id="J96-1M-ZAi"/>
                         <outlet property="textField" destination="rN8-a8-HBY" id="8YD-8i-dbq"/>
                         <outlet property="textField2" destination="H6c-Bx-W7U" id="cyU-3H-ARA"/>
@@ -127,6 +132,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aE8-A3-BN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UoE-y0-6Hh">
+                    <connections>
+                        <action selector="tap:" destination="YPL-r5-2WO" id="eHW-CW-YzA"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2747.663551401869" y="788.55291576673869"/>
         </scene>

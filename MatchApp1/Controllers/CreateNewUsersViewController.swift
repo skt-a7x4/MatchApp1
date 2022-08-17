@@ -6,11 +6,15 @@
 //
 
 import UIKit
+import Firebase
 
-class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ProfileSendDone {
     
     
     
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var textField2: UITextField!
     @IBOutlet weak var textField3: UITextField!
@@ -160,11 +164,76 @@ class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPicke
     
     @IBAction func done(_ sender: Any) {
 //        fireStoreに値を送信する
-        let manager = Manager.shared
+        let manager = Manager.shared.profile
+        
+//        まとめてデータを送信する
+        Auth.auth().signInAnonymously() { result,error in
+            
+            if error != nil {
+                
+                print(error.debugDescription)
+                return
+            }
+            if let range1  = self.textField2.text?.range(of: "歳") {
+                self.textField2.text?.replaceSubrange(range1, with: "")
+            }
+            if let range2  = self.textField3.text?.range(of: "cm") {
+                self.textField3.text?.replaceSubrange(range2, with: "")
+            }
+            let userdata = UserDataModel(name: self.textField.text, age: self.textField2.text, height: self.textField3.text, bloodType: self.textField4.text, prefecture: self.textField5.text, gender: self.gender, profile: manager, profileImageString: "", uid: Auth.auth().currentUser?.uid, quickWord: self.quickWordTextField.text, work: self.textField6.text, date: Date().timeIntervalSince1970, onlineORNot: true)
+            
+            let sendDBModel = SendDBModel()
+            sendDBModel.profileSendDone = self
+            sendDBModel.sendProfileData(userData: userdata, profileImageData: (self.imageView.image?.jpegData(compressionQuality: 0.4))!)
+        }
         
     }
     
+    func profileSendDone() {
+        dismiss(animated: true, completion: nil)
+    }
     
+    
+    @IBAction func tap(_ sender: Any) {
+//        カメラもしくはアルバムを起動させる
+        openCamera()
+    }
+    
+    
+    func openCamera(){
+        let sourceType:UIImagePickerController.SourceType = .photoLibrary
+        // カメラが利用可能かチェック
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary){
+            // インスタンスの作成
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = sourceType
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
+//            cameraPicker.showsCameraControls = true
+            present(cameraPicker, animated: true, completion: nil)
+            
+        }else{
+            
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        if let pickedImage = info[.editedImage] as? UIImage
+        {
+            imageView.image = pickedImage
+            //閉じる処理
+            picker.dismiss(animated: true, completion: nil)
+         }
+ 
+    }
+ 
+    // 撮影がキャンセルされた時に呼ばれる
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
