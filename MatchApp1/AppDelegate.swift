@@ -9,6 +9,7 @@ import UIKit
 import CoreData
 import Firebase
 import IQKeyboardManagerSwift
+import KeychainSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
+//        ログアウトとkeyChainの消去
+//        let firebaseAuth = Auth.auth()
+//        do {
+//            
+//            try firebaseAuth.signOut()
+//            
+//            
+//        }catch let signOutError as NSError {
+//            
+//            print("Error signing out %@",signOutError)
+//            
+//        }
+//        let keychain = KeychainSwift()
+//        keychain.clear()
+        
         
         // Override point for customization after application launch.
         return true

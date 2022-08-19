@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import AVFoundation
 
 class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,ProfileSendDone {
     
@@ -26,6 +27,8 @@ class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPicke
     @IBOutlet weak var toProfileButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     
+    var player = AVPlayer()
+    
 //    年齢や身長、血液型、居住地をドラムロールしたいのでUIPickerView()を使う
     var agepicker = UIPickerView()
     var heightpicker = UIPickerView()
@@ -42,6 +45,8 @@ class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPicke
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //        ビデオを背景に流したいためここで呼ばれた時に流す
+        setUpVideo()
 //        どのPickerがどのtextなのかを紐付けするためにinputViewを使う
         textField2.inputView = agepicker
         textField3.inputView = heightpicker
@@ -69,6 +74,7 @@ class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPicke
         Util.rectButton(button: toProfileButton)
         Util.rectButton(button: doneButton)
         
+
         
         
         
@@ -234,14 +240,44 @@ class CreateNewUsersViewController: UIViewController,UITextFieldDelegate,UIPicke
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setUpVideo(){
+        //ファイルパス
+        player = AVPlayer(url: URL(string: "https://firebasestorage.googleapis.com/v0/b/swiftmatchapp.appspot.com/o/backVideo.mp4?alt=media&token=77eaa1de-bd7d-4854-95e2-25e75082c1d4")!)
+        
+        //AVPlayer用のレイヤーを生成
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height)
+        
+        playerLayer.videoGravity = .resizeAspectFill
+        playerLayer.repeatCount = 0 //無限ループ(終わったらまた再生のイベント後述)
+        playerLayer.zPosition = -1
+        view.layer.insertSublayer(playerLayer, at: 0)
+        
+        //終わったらまた再生
+        NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime, //終わったr前に戻す
+            object: player.currentItem,
+            queue: .main) { (_) in
+                
+                self.player.seek(to: .zero)//開始時間に戻す
+                self.player.play()
+                
+            }
+        
+        self.player.play()
+        
     }
-    */
-
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
