@@ -20,12 +20,19 @@ protocol GetLikeCountProtocol{
     
 }
 
+protocol GetLikeDataProtocol{
+    
+    func getLikeDataProtocol(userDataModelArray:[UserDataModel])
+    
+}
+
 class LoadDBModel {
     
     var db = Firestore.firestore()
     var profileModelArray = [UserDataModel]()
     var getprofileDataProtocol:GetprofileDataProtocol?
     var getLikeCountProtocol:GetLikeCountProtocol?
+    var getLikeDataProtocol:GetLikeDataProtocol?
     
 //    ユーザーデータを受信する。ただし性別別に受信する
     func loadUsersProfile(gender:String){
@@ -104,5 +111,49 @@ class LoadDBModel {
         
         
     }
+    
+    func loadLikeList(){
+        
+        
+//        self.profileModelArray = []
+        
+        db.collection("Users").document(Auth.auth().currentUser!.uid).collection("like").addSnapshotListener { snapShot, error in
+            
+        
+            if error != nil {
+                
+                print(error.debugDescription)
+                return
+            }
+
+// if snapShot != nil {
+//
+//            print(snapShot.debugDescription)
+//            return
+//        }
+            //        上記のように記載してもしいが上記のように記載してまうとデータがロードできたことは確認できるが再度データの変数を作らないといけない為下記のように記載するとデータがきていることも確認でき変数をsnapShotDocという変数に入れることもできるので変数を作らなくても良くなる
+            if let snapShotDoc = snapShot?.documents{
+                
+                self.profileModelArray = []
+                for doc in snapShotDoc{
+                    
+                    let data = doc.data()
+                    if let name = data["name"] as? String,let age = data["age"] as? String,let height = data["height"] as? String,let bloodType = data["bloodType"] as? String,let prefecture = data["prefecture"] as? String,let gender = data["gender"] as? String,let profile = data["profile"] as? String,let profileImageString = data["profileImageString"] as? String,let uid = data["uid"] as? String,let quickWord = data["quickWord"] as? String,let work = data["work"] as? String{
+                        
+                        let userDataModel = UserDataModel(name: name, age: age, height: height, bloodType: bloodType, prefecture: prefecture, gender: gender, profile: profile, profileImageString: profileImageString, uid: uid, quickWord: quickWord, work: work, date: 0, onlineORNot: true)
+                        
+                        self.profileModelArray.append(userDataModel)
+                    }
+                    
+                }
+                
+                self.getLikeDataProtocol?.getLikeDataProtocol(userDataModelArray: self.profileModelArray)
+                
+            }
+        }
+        
+        
+    }
+    
     
 }

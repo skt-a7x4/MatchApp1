@@ -25,6 +25,9 @@
 		4F9D760F28ACC153001B3F74 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D760E28ACC153001B3F74 /* Manager.swift */; };
 		4F9D761128ACD0C6001B3F74 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D761028ACD0C6001B3F74 /* UserDataModel.swift */; };
 		4F9D761328ACD53F001B3F74 /* SendDBModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9D761228ACD53F001B3F74 /* SendDBModel.swift */; };
+		4FABE5DD28AF650F003C0BFF /* LikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FABE5DC28AF650F003C0BFF /* LikeListViewController.swift */; };
+		4FABE5E028AF65A9003C0BFF /* LikeProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FABE5DE28AF65A9003C0BFF /* LikeProfileCell.swift */; };
+		4FABE5E128AF65A9003C0BFF /* LikeProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FABE5DF28AF65A9003C0BFF /* LikeProfileCell.xib */; };
 		4FC56EBD28AF2BEE00EEDE7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC56EBC28AF2BEE00EEDE7A /* ProfileViewController.swift */; };
 		4FC56EC028AF2FDE00EEDE7A /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC56EBE28AF2FDE00EEDE7A /* ProfileImageCell.swift */; };
 		4FC56EC128AF2FDE00EEDE7A /* ProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC56EBF28AF2FDE00EEDE7A /* ProfileImageCell.xib */; };
@@ -56,6 +59,9 @@
 		4F9D760E28ACC153001B3F74 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		4F9D761028ACD0C6001B3F74 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		4F9D761228ACD53F001B3F74 /* SendDBModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendDBModel.swift; sourceTree = "<group>"; };
+		4FABE5DC28AF650F003C0BFF /* LikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListViewController.swift; sourceTree = "<group>"; };
+		4FABE5DE28AF65A9003C0BFF /* LikeProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeProfileCell.swift; sourceTree = "<group>"; };
+		4FABE5DF28AF65A9003C0BFF /* LikeProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeProfileCell.xib; sourceTree = "<group>"; };
 		4FC56EBC28AF2BEE00EEDE7A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4FC56EBE28AF2FDE00EEDE7A /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		4FC56EBF28AF2FDE00EEDE7A /* ProfileImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileImageCell.xib; sourceTree = "<group>"; };
@@ -136,6 +142,8 @@
 				4FC56EC328AF391D00EEDE7A /* ProfileTextCell.xib */,
 				4FC56EC628AF3AD600EEDE7A /* ProfielDetailCell.swift */,
 				4FC56EC728AF3AD600EEDE7A /* ProfielDetailCell.xib */,
+				4FABE5DE28AF65A9003C0BFF /* LikeProfileCell.swift */,
+				4FABE5DF28AF65A9003C0BFF /* LikeProfileCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -159,6 +167,7 @@
 				4F9D760C28ACBF22001B3F74 /* InputProfileController.swift */,
 				4F0AD97D28AE1007003BF9B3 /* HumansViewController.swift */,
 				4FC56EBC28AF2BEE00EEDE7A /* ProfileViewController.swift */,
+				4FABE5DC28AF650F003C0BFF /* LikeListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 				4FC56EC928AF3AD600EEDE7A /* ProfielDetailCell.xib in Resources */,
 				4FC56EC528AF391D00EEDE7A /* ProfileTextCell.xib in Resources */,
 				4F9D75F828AC9F91001B3F74 /* Assets.xcassets in Resources */,
+				4FABE5E128AF65A9003C0BFF /* LikeProfileCell.xib in Resources */,
 				4FC56EC128AF2FDE00EEDE7A /* ProfileImageCell.xib in Resources */,
 				4F06C3AB28ADD87400E519B6 /* heart.json in Resources */,
 				4F9D75F328AC9F8F001B3F74 /* Main.storyboard in Resources */,
@@ -310,11 +320,13 @@
 				4F0AD97C28AE0C50003BF9B3 /* KeyChainConfig.swift in Sources */,
 				4F9D760828ACA3C0001B3F74 /* CreateNewUsersViewController.swift in Sources */,
 				4F9D761328ACD53F001B3F74 /* SendDBModel.swift in Sources */,
+				4FABE5E028AF65A9003C0BFF /* LikeProfileCell.swift in Sources */,
 				4F9D760D28ACBF22001B3F74 /* InputProfileController.swift in Sources */,
 				4F9D761128ACD0C6001B3F74 /* UserDataModel.swift in Sources */,
 				4FC56EC028AF2FDE00EEDE7A /* ProfileImageCell.swift in Sources */,
 				4F0AD98028AE33F8003BF9B3 /* LoadDBModel.swift in Sources */,
 				4F9D75EC28AC9F8F001B3F74 /* AppDelegate.swift in Sources */,
+				4FABE5DD28AF650F003C0BFF /* LikeListViewController.swift in Sources */,
 				4F9D75EE28AC9F8F001B3F74 /* SceneDelegate.swift in Sources */,
 				4FC56EC828AF3AD600EEDE7A /* ProfielDetailCell.swift in Sources */,
 			);
