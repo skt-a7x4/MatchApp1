@@ -28,6 +28,12 @@
 		4FABE5DD28AF650F003C0BFF /* LikeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FABE5DC28AF650F003C0BFF /* LikeListViewController.swift */; };
 		4FABE5E028AF65A9003C0BFF /* LikeProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FABE5DE28AF65A9003C0BFF /* LikeProfileCell.swift */; };
 		4FABE5E128AF65A9003C0BFF /* LikeProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FABE5DF28AF65A9003C0BFF /* LikeProfileCell.xib */; };
+		4FC2E0A628B535B000BAE343 /* MatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2E0A528B535B000BAE343 /* MatchListViewController.swift */; };
+		4FC2E0A928B5382600BAE343 /* MatchPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2E0A728B5382600BAE343 /* MatchPersonCell.swift */; };
+		4FC2E0AA28B5382600BAE343 /* MatchPersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC2E0A828B5382600BAE343 /* MatchPersonCell.xib */; };
+		4FC2E0AC28B541EE00BAE343 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2E0AB28B541EE00BAE343 /* ChatViewController.swift */; };
+		4FC2E0AE28B6665F00BAE343 /* AsiatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2E0AD28B6665F00BAE343 /* AsiatoViewController.swift */; };
+		4FC2E0B028B680C500BAE343 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC2E0AF28B680C500BAE343 /* Message.swift */; };
 		4FC56EBD28AF2BEE00EEDE7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC56EBC28AF2BEE00EEDE7A /* ProfileViewController.swift */; };
 		4FC56EC028AF2FDE00EEDE7A /* ProfileImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC56EBE28AF2FDE00EEDE7A /* ProfileImageCell.swift */; };
 		4FC56EC128AF2FDE00EEDE7A /* ProfileImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FC56EBF28AF2FDE00EEDE7A /* ProfileImageCell.xib */; };
@@ -62,6 +68,12 @@
 		4FABE5DC28AF650F003C0BFF /* LikeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeListViewController.swift; sourceTree = "<group>"; };
 		4FABE5DE28AF65A9003C0BFF /* LikeProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeProfileCell.swift; sourceTree = "<group>"; };
 		4FABE5DF28AF65A9003C0BFF /* LikeProfileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeProfileCell.xib; sourceTree = "<group>"; };
+		4FC2E0A528B535B000BAE343 /* MatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListViewController.swift; sourceTree = "<group>"; };
+		4FC2E0A728B5382600BAE343 /* MatchPersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchPersonCell.swift; sourceTree = "<group>"; };
+		4FC2E0A828B5382600BAE343 /* MatchPersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchPersonCell.xib; sourceTree = "<group>"; };
+		4FC2E0AB28B541EE00BAE343 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		4FC2E0AD28B6665F00BAE343 /* AsiatoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsiatoViewController.swift; sourceTree = "<group>"; };
+		4FC2E0AF28B680C500BAE343 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4FC56EBC28AF2BEE00EEDE7A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		4FC56EBE28AF2FDE00EEDE7A /* ProfileImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCell.swift; sourceTree = "<group>"; };
 		4FC56EBF28AF2FDE00EEDE7A /* ProfileImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileImageCell.xib; sourceTree = "<group>"; };
@@ -144,6 +156,8 @@
 				4FC56EC728AF3AD600EEDE7A /* ProfielDetailCell.xib */,
 				4FABE5DE28AF65A9003C0BFF /* LikeProfileCell.swift */,
 				4FABE5DF28AF65A9003C0BFF /* LikeProfileCell.xib */,
+				4FC2E0A728B5382600BAE343 /* MatchPersonCell.swift */,
+				4FC2E0A828B5382600BAE343 /* MatchPersonCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,6 +169,7 @@
 				4F9D761028ACD0C6001B3F74 /* UserDataModel.swift */,
 				4F9D761228ACD53F001B3F74 /* SendDBModel.swift */,
 				4F0AD97F28AE33F8003BF9B3 /* LoadDBModel.swift */,
+				4FC2E0AF28B680C500BAE343 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,6 +183,9 @@
 				4F0AD97D28AE1007003BF9B3 /* HumansViewController.swift */,
 				4FC56EBC28AF2BEE00EEDE7A /* ProfileViewController.swift */,
 				4FABE5DC28AF650F003C0BFF /* LikeListViewController.swift */,
+				4FC2E0A528B535B000BAE343 /* MatchListViewController.swift */,
+				4FC2E0AB28B541EE00BAE343 /* ChatViewController.swift */,
+				4FC2E0AD28B6665F00BAE343 /* AsiatoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -251,6 +269,7 @@
 			files = (
 				4F9D75FB28AC9F91001B3F74 /* LaunchScreen.storyboard in Resources */,
 				4F9D760628ACA258001B3F74 /* GoogleService-Info.plist in Resources */,
+				4FC2E0AA28B5382600BAE343 /* MatchPersonCell.xib in Resources */,
 				4FC56EC928AF3AD600EEDE7A /* ProfielDetailCell.xib in Resources */,
 				4FC56EC528AF391D00EEDE7A /* ProfileTextCell.xib in Resources */,
 				4F9D75F828AC9F91001B3F74 /* Assets.xcassets in Resources */,
@@ -310,7 +329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FC2E0A628B535B000BAE343 /* MatchListViewController.swift in Sources */,
 				4F0AD97E28AE1007003BF9B3 /* HumansViewController.swift in Sources */,
+				4FC2E0AC28B541EE00BAE343 /* ChatViewController.swift in Sources */,
 				4F9D75F028AC9F8F001B3F74 /* ViewController.swift in Sources */,
 				4F9D760B28ACB53C001B3F74 /* Util.swift in Sources */,
 				4F9D75F628AC9F8F001B3F74 /* MatchApp1.xcdatamodeld in Sources */,
@@ -326,9 +347,12 @@
 				4FC56EC028AF2FDE00EEDE7A /* ProfileImageCell.swift in Sources */,
 				4F0AD98028AE33F8003BF9B3 /* LoadDBModel.swift in Sources */,
 				4F9D75EC28AC9F8F001B3F74 /* AppDelegate.swift in Sources */,
+				4FC2E0AE28B6665F00BAE343 /* AsiatoViewController.swift in Sources */,
 				4FABE5DD28AF650F003C0BFF /* LikeListViewController.swift in Sources */,
 				4F9D75EE28AC9F8F001B3F74 /* SceneDelegate.swift in Sources */,
+				4FC2E0B028B680C500BAE343 /* Message.swift in Sources */,
 				4FC56EC828AF3AD600EEDE7A /* ProfielDetailCell.swift in Sources */,
+				4FC2E0A928B5382600BAE343 /* MatchPersonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

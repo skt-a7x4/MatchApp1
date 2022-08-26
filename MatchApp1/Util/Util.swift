@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Hex
 import Lottie
+import ImpressiveNotifications
 
 class Util {
 //    static※変わらない値
@@ -47,4 +48,27 @@ class Util {
         
     }
     
+//    ノーティフィケーション
+    static func matchiNotification(name:String,id:String){
+        
+        INNotifications.show(type: .success, data: INNotificationData(title: "\(name)さんとマッチングしました！", description: "さっそくメッセージをしてみましょう！", image: UIImage(named: "match"), delay: 3, completionHandler: nil), customStyle: INNotificationStyle(cornerRadius: 20.0, backgroundColor: .cyan, titleColor: .white, descriptionColor: .purple, imageSize: CGSize(width: 100.0, height: 100.0)))
+        
+    }
+    
+    static func setChatColor(jibun:Bool) -> UIColor{
+        
+        if jibun == true {
+            
+            let chatColor = UIColor(hex: "#42c4cc")
+            
+            return chatColor
+        }else{
+            
+            let chatColor = UIColor(hex: "#eceeef")
+            return chatColor
+            
+        }
+        
+        
+    }
 }

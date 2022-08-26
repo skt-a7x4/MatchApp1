@@ -130,6 +130,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="いいねをありがとう"/>
+                        <connections>
+                            <action selector="LikeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Etd-ME-8gy"/>
+                        </connections>
                     </button>
                 </subviews>
             </tableViewCellContentView>

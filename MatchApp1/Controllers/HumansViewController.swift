@@ -26,6 +26,7 @@ class HumansViewController: UIViewController,GetprofileDataProtocol,UICollection
     let sectionInsets = UIEdgeInsets(top: 10.0, left: 2.0, bottom: 2.0, right: 2.0)
     
     let itemsPerRow:CGFloat = 2
+    let db = Firestore.firestore()
     
     var userDataModelArray = [UserDataModel]()
     
@@ -50,6 +51,10 @@ class HumansViewController: UIViewController,GetprofileDataProtocol,UICollection
             let loadDBModel = LoadDBModel()
             loadDBModel.getprofileDataProtocol = self
             loadDBModel.loadUsersProfile(gender: userData["gender"] as! String)
+            
+            self.db.collection("Users").document(Auth.auth().currentUser!.uid).collection("matching").document(Auth.auth().currentUser!.uid).setData(["gender":userData["gender"] as Any,"uid":userData["uid"] as Any,"age":userData["age"] as Any,"height":userData["height"] as Any,"profileImageString":userData["profileImageString"] as Any,"prefecture":userData["prefecture"] as Any,"name":userData["name"] as Any,"quickWord":userData["quickWord"] as Any,"profile":userData["profile"] as Any,"bloodType":userData["bloodType"] as Any,"work":userData["work"] as Any])
+            
+            loadDBModel.loadMatchingPersonData()
             
         }else if Auth.auth().currentUser?.uid != nil && searchORNot == true{
             

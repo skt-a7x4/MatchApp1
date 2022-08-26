@@ -24,6 +24,7 @@ class LikeProfileCell: UITableViewCell {
     var userData = [String:Any]()
     var uid = String()
     static let identifier = "LikeProfileCell"
+    var profileImageViewString = String()
     
     static func nib() ->UINib{
         
@@ -47,6 +48,7 @@ class LikeProfileCell: UITableViewCell {
         profileImageView.sd_setImage(with: URL(string: profileImageViewString), completed: nil)
         self.uid = uid
         self.userData = userData
+        self.profileImageViewString = profileImageViewString
         
         Util.rectButton(button: likeButton)
        
@@ -55,8 +57,23 @@ class LikeProfileCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        profileImageView.layer.cornerRadius = profileImageView.frame.width/2
         // Initialization code
     }
+    
+    
+    @IBAction func LikeAction(_ sender: Any) {
+//        いいねを飛ばす
+        let sendDBModel = SendDBModel()
+        sendDBModel.sendToLikeFromLike(likeFlag: true, thisUserID: self.uid, matchName: nameLabel.text!, matchID: self.uid)
+        
+        print(self.uid)
+        print(self.userData["uid"].debugDescription)
+        
+        sendDBModel.sendToMatchingList(thisiUserID: self.uid, name: nameLabel.text!, age: ageLabel.text!, bloodType: bloodLabel.text!, height: heightLabel.text!, prefecture: prefectureLabel.text!, gender: genderLabel.text!, profile: "後で外部引数で追加", profileImageString: self.profileImageViewString, uid: self.uid, quickWord: quickWordLabel.text!, work: workLabel.text!, userData: self.userData)
+    }
+    
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

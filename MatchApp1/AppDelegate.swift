@@ -21,20 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
 //        ログアウトとkeyChainの消去
-//        let firebaseAuth = Auth.auth()
-//        do {
-//            
-//            try firebaseAuth.signOut()
-//            
-//            
-//        }catch let signOutError as NSError {
-//            
-//            print("Error signing out %@",signOutError)
-//            
-//        }
-//        let keychain = KeychainSwift()
-//        keychain.clear()
-//        
+//      x
+        
         
         // Override point for customization after application launch.
         return true

@@ -46,6 +46,14 @@ class ProfileViewController: UIViewController,UITableViewDelegate,UITableViewDat
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = false
+        let sendDBModel = SendDBModel()
+        sendDBModel.sendAshiato(aitenoUserID: (userDataModel?.uid)!)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
